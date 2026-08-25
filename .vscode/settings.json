@@ -1,11 +1,12 @@
 {
-    // 这里是你原有其他配置……
+    // 这里保留你原有其他配置……
     "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.recipe.default": "xelatex‑3次(简历tikz头像)",
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex",
+            "name": "xelatex‑3次(简历tikz头像)",
             "tools": [
-                "xelatex"
+                "xelatex",
             ]
         }
     ],
@@ -20,5 +21,6 @@
                 "%DOC%"
             ]
         }
-    ]
+    ],
+    "latex-workshop.view.pdf.viewer": "tab"
 }

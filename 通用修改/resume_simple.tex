@@ -1,0 +1,127 @@
+﻿\documentclass[10pt,a4paper]{ctexart}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\usepackage[a4paper,left=1.0cm,right=1.0cm,top=1.15cm,bottom=0.75cm,nohead]{geometry}
+\linespread{1}
+\usepackage{xcolor}
+\definecolor{themecolor}{HTML}{0849A3}
+\definecolor{textmain}{HTML}{111111}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{newunicodechar}
+\newunicodechar{→}{$\rightarrow$}
+\CJKsetecglue{}
+\setmainfont[
+    Path=Font/,
+    Extension = .otf,
+    BoldFont = HelveticaNeueLTPro-Md.otf
+]{HelveticaNeueLTPro-Roman.otf}
+\setCJKmainfont[
+    Path=Font/,
+    Extension = .otf,
+    BoldFont = ProGB18030 DemiBold.otf
+]{ProGB18030.otf}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{fontawesome}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic}
+\usepackage{enumitem}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=0.1em,itemsep=0.5pt,parsep=0pt,partopsep=0pt,leftmargin=1.2em}
+\setlist[enumerate]{topsep=0.1em,itemsep=0.6pt,parsep=0pt,partopsep=0pt,leftmargin=1.35em}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries\raggedright\color{textmain}}
+  {}{0em}{}
+  [{\color{themecolor}\titlerule}]
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\newcommand{\sect}[2]{%
+  \section{\texorpdfstring{\makebox[\widthof{\faGraduationCap}][c]{{\mdseries\color{themecolor}#1}}\ #2}{#2}}
+}
+\begin{document}
+\pagestyle{empty}
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{\color{themecolor}\rule{\paperwidth}{1.0em}}%
+}
+\AddToShipoutPictureFG*{%
+  \AtPageLowerLeft{\raisebox{0.18em}[0pt][0pt]{\makebox[\paperwidth][c]{\color{white}\scriptsize\faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}}}}%
+}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north east] at ($(current page.north east)+(-0.7cm,-0.9cm)$)
+  {\includegraphics[height=2.3cm]{img/avatar.png}};
+\end{tikzpicture}
+\centerline{\LARGE\bfseries\color{textmain}王秋明}
+  \centerline{\small
+  \faPhone\ 17679390730（微信同号）\quad
+  \faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}
+  }
+  
+  \centerline{\small
+  \faCalendar\ 25岁\quad
+  \faMars\ 男\quad
+  \faGraduationCap\ 硕士应届生\quad
+  \faBullseye\ 行业拓展（信创生态方向）\quad
+  \faFlag\ 中共党员
+  }
+\vspace{-2pt}
+\sect{\faGraduationCap}{教育背景}
+\noindent\textbf{江西师范大学 - 软件学院 \quad 软件工程 \quad 本科 \quad 成绩前10\%}
+\hfill 2020.09 -- 2024.06\\
+\qquad 主修课程：计算机网络、操作系统、数据结构、Web开发、项目管理、软件测试等，具备完整计算机技术知识体系。
+\vspace{3pt}
+\noindent\textbf{南昌航空大学 - 信息工程学院 \quad 计算机技术 \quad 硕士 \quad 成绩前10\%}
+\hfill 2024.09 -- 2027.06\\
+\qquad 主修课程：机器学习、深度学习、复杂网络、算法设计，关注ARM架构、大模型、国产化信创技术发展趋势，具备技术方案理解与分析能力。
+
+\sect{\faTrophy}{获奖与证书}
+\begin{itemize}
+  \item 2021-2022 ACM/ICPC 江西省省赛 金牌
+  \item 第十一届、十二届蓝桥杯程序设计（C++组）全国三等奖
+  \item 2023中国高校计算机大赛-团体程序设计天梯赛全国二等奖
+  \item 获校综合素质一等奖学金，国家励志奖学金，校三好学生，文明大学生，优秀毕业生称号
+  \item 2021-2022、2022-2023年江西省程序设计大赛一等奖
+  \item CET6 、软件设计师
+\end{itemize}
+
+\sect{\faUniversity}{实习经历}
+\vspace{4pt}
+\noindent\textbf{宁德时代 · 21C创新实验室} \hfill 软件工程师 \hfill 2022.06 -- 2022.08
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 参与企业级文档库平台建设，深度理解企业级业务解决方案，协同多角色完成需求梳理、方案落地，熟悉企业客户内部协作流程与业务资产规范化管理诉求。
+  \item 对接研发团队业务需求，完成模块功能落地，理解客户实际业务痛点，能够将技术能力转化为业务价值，具备跨团队沟通协同与需求对齐能力。
+  \item 参与项目性能优化与兼容性适配工作，梳理产品使用场景，输出适配优化思路，理解软硬件协同、多环境兼容的产品落地要点。
+\end{enumerate}
+\vspace{4pt}
+\noindent\textbf{华平股份信息技术有限公司} \hfill 前端开发工程师 \hfill 2024.03 -- 2024.05
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 参与监控平台系统架构升级，深度理解大型行业业务系统整体架构，协同团队完成老系统向新技术体系迁移，理解行业客户系统改造、国产化替换场景下的落地难点。
+  \item 参与Web实时音视频会议系统建设，面向多人业务场景做兼容性与稳定性优化，理解政企客户高可用业务诉求，具备复杂行业方案的理解、拆解与落地跟进经验。
+  \item 协同产品、测试、后端多方推进项目全流程，参与需求评审、联调、上线，积累多方生态角色协同经验，能够站在业务视角看待产品价值与客户落地问题。
+\end{enumerate}
+
+\sect{\faFileText}{项目经历}
+\textbf{AI智能面试平台 + RAG知识库系统}
+技术底座：大模型应用、RAG知识库、流式交互、多源文档解析
+\begin{itemize}
+  \item \textbf{项目简介：}面向业务场景的大模型应用解决方案，完成知识库、智能问答、流式交互整套方案落地，熟悉大模型应用架构、文档处理、知识库建设整套技术方案逻辑。
+\end{itemize}
+\begin{enumerate}
+  \item 参与整套解决方案的整体设计，打通多模块协同链路，理解从文档接入、知识库构建到上层业务应用的完整链路，具备大模型相关技术方案拆解能力。
+  \item 完成多格式文档解析、知识库语义检索方案设计，熟悉行业知识库建设、数据安全、输出防护等落地要点，可快速理解行业解决方案的技术组成。
+  \item 对接流式大模型推理能力，搭建异步任务处理体系，理解大模型业务场景下性能、并发、稳定性的落地约束，关注ARM架构下大模型部署相关技术趋势。
+  \item 串联语音ASR、大模型推理、TTS整套实时业务链路，理解多组件协同的复杂业务方案，能够从客户业务视角评估方案可行性与落地风险。
+\end{enumerate}
+
+\sect{\faWrench}{技能特长}
+\begin{enumerate}
+  \item \textbf{扎实计算机技术功底}，熟练掌握计算机网络、操作系统、体系结构、数据结构算法，具备快速理解CPU、服务器、ARM架构、大模型、金融云等国产化技术方案的能力。
+  \item \textbf{方案理解与生态协同能力}，拥有企业级项目实习经历，熟悉政企行业系统改造、方案落地流程，擅长跨角色沟通协同，能够对接整机厂商、客户等多方生态角色推进项目。
+  \item \textbf{信创与行业洞察}，持续跟踪国产化、信创政策趋势，关注金融行业国产化建设、关键信息基础设施建设相关方向，能够结合技术视角分析行业业务诉求。
+  \item \textbf{综合业务能力}，具备方案梳理、需求拆解、材料整理能力；熟悉展会、技术研讨类市场活动的技术侧逻辑；党员身份，责任心强，抗压能力优秀，愿意面向客户开展行业拓展工作。
+  \item \textbf{工具基础}，掌握Git、Docker、Linux基础工具，具备快速学习新技术、新行业知识的能力，能够快速上手行业拓展、方案交流、客户对接类工作。
+\end{enumerate}
+
+\end{document}
