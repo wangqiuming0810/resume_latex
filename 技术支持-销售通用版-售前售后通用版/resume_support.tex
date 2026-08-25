@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{ctexart}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\usepackage[a4paper,left=1.0cm,right=1.0cm,top=1.15cm,bottom=0.75cm,nohead]{geometry}
+\linespread{0.98}
+\usepackage{xcolor}
+\definecolor{themecolor}{HTML}{0849A3}
+\definecolor{textmain}{HTML}{111111}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{newunicodechar}
+\newunicodechar{→}{$\rightarrow$}
+\CJKsetecglue{}
+\setmainfont[
+  Path = Font/,
+  Extension = .otf,
+  BoldFont = HelveticaNeueLTPro-Md.otf
+]{HelveticaNeueLTPro-Roman.otf}
+\setCJKmainfont[
+  Path = Font/,
+  Extension = .otf,
+  BoldFont = ProGB18030 DemiBold.otf
+]{ProGB18030.otf}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{fontawesome}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic}
+\usepackage{enumitem}
+\usepackage{enumitem}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=0.1em,itemsep=0.5pt,parsep=0pt,partopsep=0pt,leftmargin=1.2em}
+\setlist[enumerate]{topsep=0.1em,itemsep=0.6pt,parsep=0pt,partopsep=0pt,leftmargin=1.35em}
+\usepackage{titlesec}
+% ========== 核心修改：section标题字号由\large → \Large，调整上下间距 ==========
+\titleformat{\section}
+  {\Large\bfseries\raggedright\color{textmain}}
+  {}{0em}{}
+  [{\color{themecolor}\titlerule}]
+% \titlespacing*{命令}{左边距}{段前间距}{段后间距}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\newcommand{\sect}[2]{%
+  \section{\texorpdfstring{\makebox[\widthof{\faGraduationCap}][c]{{\mdseries\color{themecolor}#1}}\ #2}{#2}}
+}
+\begin{document}
+\pagestyle{empty}
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{\color{themecolor}\rule{\paperwidth}{1.0em}}%
+}
+\AddToShipoutPictureFG*{%
+  \AtPageLowerLeft{\raisebox{0.18em}[0pt][0pt]{\makebox[\paperwidth][c]{\color{white}\scriptsize\faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}}}}%
+}
+% \begin{tikzpicture}[remember picture,overlay]
+%   \node[anchor=north west] at ($(current page.north west)+(0.35cm,-0.35cm)$)
+%   {\includegraphics[height=1.45cm]{img/nchu.png}};
+% \end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north east] at ($(current page.north east)+(-0.7cm,-0.9cm)$)
+  {\includegraphics[height=2.3cm]{img/avatar.png}};
+\end{tikzpicture}
+
+\centerline{\LARGE\bfseries\color{textmain}王秋明}
+  \centerline{\small
+  \faPhone\ 17679390730（微信同号）\quad
+  \faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}
+  }
+  
+  \centerline{\small
+  \faCalendar\ 25岁\quad
+  \faMars\ 男\quad
+  \faGraduationCap\ 硕士应届生\quad
+  \faBullseye\ 技术支持 / 售前售后工程师\quad
+  \faFlag\ 中共党员
+  }
+\vspace{-2pt}
+
+\sect{\faGraduationCap}{教育背景}
+\noindent\textbf{南昌航空大学 - 信息工程学院 \quad 计算机技术 \quad 硕士 \quad 成绩前10\%}
+\hfill 2024.09 -- 2027.06\\
+\qquad 主修课程：高级操作系统、计算机网络与安全、分布式系统、云计算与虚拟化、算法设计与分析、项目管理等
+\vspace{3pt}
+
+\noindent\textbf{江西师范大学 - 软件学院 \quad 软件工程 \quad 本科 \quad 成绩前10\%}
+\hfill 2020.09 -- 2024.06\\
+\qquad 主修课程：操作系统、计算机网络、数据库原理、Linux系统、信息安全、软件工程等
+
+\sect{\faBriefcase}{实习经历}
+\vspace{4pt}
+\noindent\textbf{宁德时代 · 21C创新实验室} \hfill IT技术支持实习生 \hfill 2022.06 -- 2022.08\\
+\vspace{-7pt}
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 负责研发团队终端设备与办公外设的技术支持，快速响应并解决系统异常、外设故障、账号权限、网络连接等问题，建立设备台账与常见故障处理手册，降低重复咨询量，提升问题解决效率。
+  \item 参与企业级文档管理平台的上线推广与用户支持，对接内部客户完成环境配置、权限开通与操作培训，收集使用反馈并跟进问题闭环，助力研发团队提升文档协作与管理效率。
+  \item 配合研发团队完成平台功能测试、浏览器兼容性优化与版本发布验证，保障功能稳定交付，同步输出用户使用指引，降低用户上手门槛。
+\end{enumerate}
+\vspace{4pt}
+\noindent\textbf{华平股份信息技术有限公司} \hfill 售后技术支持实习生 \hfill 2024.03 -- 2024.05\\
+\vspace{-7pt}
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 负责多套监控平台的日常巡检与故障处理，跟踪服务异常、页面访问失败、音视频卡顿等问题，协同研发团队定位服务器、网络与应用层根因，输出标准化故障处理记录，保障客户系统稳定运行。
+  \item 参与客户侧监控平台重构与项目迁移工作，协助梳理部署流程、编写部署说明文档与回归测试清单，规范交付标准，缩短新环境部署与问题排查周期。
+  \item 支撑实时音视频会议系统的客户上线与现场支持，对接客户解决设备接入、屏幕共享、会议异常等问题，优化多终端兼容与弱网体验，保障会议效果，提升客户满意度。
+\end{enumerate}
+
+\sect{\faFileText}{项目实践}
+
+\noindent\textbf{实验室信息化运维与技术服务项目}\hfill 2023.09 -- 2024.06\\
+服务对象：实验室同学
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 负责实验室PC、交换机、投影、打印等设备的日常运维与技术支持，快速响应师生报修，处理软硬件故障、IP冲突、外设接入等问题，建立报修台账与故障知识库，保障教学科研设备稳定运行。
+  \item 参与机房与工位环境标准化建设，规范线缆标识、设备标签与资产台账，排查供电、散热、温湿度等风险点，优化机房运行环境。
+  \item 完成操作系统与办公软件的批量部署与安全配置，编写新生上机操作指南，开展设备使用培训，提升用户自主解决问题的能力。
+\end{enumerate}
+
+\sect{\faStar}{核心能力}
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item \textbf{技术支持与问题排查：}具备一线技术服务经验，熟悉Windows/Linux系统、TCP/IP网络原理，能独立排查软硬件、网络、系统常见故障，擅长问题定位与闭环处理，保障服务质量。
+  \item \textbf{项目交付与文档能力：}熟悉项目上线、部署实施与验收全流程，能独立编写部署手册、故障报告、运维指南、用户培训材料等技术文档，支撑项目标准化交付。
+  \item \textbf{客户沟通与需求对接：}具备良好的客户意识与表达能力，可清晰对接客户需求、讲解技术方案、开展产品培训，能跨团队协调资源推进问题解决。
+  \item \textbf{技术基础与学习能力：}计算机专业硕士背景，掌握数据库、中间件、虚拟化、云计算基础概念，可快速理解新产品、新技术，适配不同行业的技术支持需求。
+  \item \textbf{综合素质：}中共党员，责任心强，做事严谨细致，具备较强的抗压能力与目标导向意识，可适应出差、值班与多任务并行的工作节奏。
+\end{enumerate}
+
+\sect{\faTrophy}{获奖与证书}
+\begin{itemize}
+  \item 2021-2022 ACM/ICPC 江西省程序设计竞赛 金牌；连续两年获江西省程序设计大赛一等奖
+  \item 第十一届、十二届蓝桥杯程序设计大赛全国三等奖；中国高校计算机大赛-团体程序设计天梯赛全国二等奖
+  \item 获国家励志奖学金、校综合素质一等奖学金；获评校三好学生、文明大学生、优秀毕业生
+  \item 大学英语六级（CET-6）；软件设计师专业技术资格证书
+\end{itemize}
+
+\end{document}

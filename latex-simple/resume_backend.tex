@@ -1,0 +1,152 @@
+% ============================================================
+%  简洁风 LaTeX 简历模版 · 后端开发方向（写作指引示例内容）
+%  基于 job-hunt-copilot resources/resume_template.tex
+%  编译：xelatex resume_backend.tex
+%  章节顺序：教育经历 → 实习经历 → 项目经历 → 专业技能
+%  内容为 STAR 写作指引示例，请替换为自己的真实信息。
+% ============================================================
+
+\documentclass[10pt,a4paper]{ctexart}
+
+\usepackage[a4paper,left=1.0cm,right=1.0cm,top=0.9cm,bottom=0.9cm]{geometry}
+\linespread{0.98}
+\tolerance=2000
+\emergencystretch=3em
+\hyphenpenalty=400
+\exhyphenpenalty=400
+\hbadness=10000
+\xeCJKsetup{CJKecglue={\hspace{0.15em plus 0.08em minus 0.05em}}}
+% 字体交给 ctex / xeCJK 默认处理（BasicTeX 自带 Fandol 等中文字体）
+
+\usepackage[svgnames,table]{xcolor}
+\definecolor{primary}{HTML}{1E293B}
+\definecolor{accent}{HTML}{3B5BA6}
+\definecolor{muted}{HTML}{64748B}
+\definecolor{rule}{HTML}{E2E8F0}
+
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\usepackage{enumitem}
+\setlist[itemize]{
+  leftmargin=1.0em,
+  topsep=0pt,
+  itemsep=0pt,
+  parsep=0pt,
+  partopsep=0pt,
+  label=\textcolor{accent}{\footnotesize\textbullet}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\color{accent}}{}{0em}{}
+  [\vspace{-6pt}{\color{rule}\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{4pt}{0pt}
+
+\newcommand{\entry}[4]{%
+  \par\vspace{1pt}%
+  \noindent
+  \textbf{\color{primary}#1}\hfill{\footnotesize\color{muted}#4}\par
+  \ifx\relax#2\relax\else\noindent{\small\color{muted}\textit{#2}\ifx\relax#3\relax\else\,\,·\,\,#3\fi}\par\fi
+  \vspace{0pt}%
+}
+
+\newcommand{\repo}[2]{%
+  \par\vspace{0pt}\noindent{\small\color{muted}\faGithub\,\,仓库：\href{#2}{#1}}\par
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent{\fontsize{20pt}{24pt}\selectfont\bfseries\color{primary}张三}\quad{\normalsize\color{muted}示例大学 · 计算机科学与技术专业 · 本科}\\[4pt]
+\noindent{\small\faPhone\,\,+86 138-0000-0000
+  \enspace\textcolor{muted}{\textperiodcentered}\enspace
+  \faEnvelope\,\,\href{mailto:yourname@example.com}{yourname@example.com}
+  \enspace\textcolor{muted}{\textperiodcentered}\enspace
+  \faGithub\,\,\href{https://github.com/yourname}{yourname}}
+
+\section{教育经历}
+
+\entry{示例大学（示例）}{计算机科学与技术专业}{2021.09 -- 2025.06}
+
+\begin{itemize}
+  \item \textbf{写法指引}： 第一行写学校、专业、毕业年份；GPA、奖学金、CET 等级等信息一并概括，一行写完
+  \item \textbf{加分项}： 第二行写在校研究方向、高绩点课程或求职意向，一句话即可，不必展开
+  \item \textbf{补充}： 应届生可标注求职方向（如后端开发），与岗位 JD 对齐
+  \item \textbf{写法指引}： 日期格式全篇统一（如 2025.07 或 2025/07），保持整洁
+\end{itemize}
+
+\section{开源经历}
+
+\begin{itemize}
+  \item \textbf{写法指引}： 开源贡献写"项目名 + 你的贡献 + 结果"：修复了什么问题、提交了什么 PR、维护了什么仓库
+  \item 示例：为知名开源项目修复并发 bug 并补充测试，PR 被合并，仓库获得 200+ star（示例）
+  \item 示例：维护自己的开源工具库（如 GitHub Actions 工作流、CLI 工具），累计下载量 5k+（示例）
+\end{itemize}
+
+\section{实习经历}
+
+\entry{示例科技有限公司（示例）}{后端开发实习生}{2025/07 — 2025/12}
+
+\noindent\textbf{负责工作}：参与消息平台后端研发，负责模板渲染与告警系统改造（示例）
+
+\begin{itemize}
+  \item \textbf{[S·情境] 先交代背景}：业务发展快，站内消息模板渲染链路响应慢（180ms+），高峰期告警多、人工排障成本高
+  \item \textbf{[T·任务] 再写职责}：独立负责模板渲染模块的重构、测试与上线，参与告警系统改造
+  \item \textbf{[A·行动] 写关键动作}：用 Go + MySQL + Redis 重写渲染链路，引入异步队列与幂等控制，补齐监控
+  \item \textbf{[R·结果] 最后量化}：接口平均响应时间从 180ms 降至 65ms，重复消费基本消除，排障时间减半
+  \item \textbf{写法指引}： 每条经历都是"背景 → 职责 → 行动 → 量化结果"四段式；没有实习经历时删掉本模块，项目多写两行
+  \item \textbf{补充}： 实习经历 3--5 条为宜；篇幅紧张时也可合并成"S/T + A/R"两行一条
+\end{itemize}
+
+\section{项目经历}
+
+\entry{示例项目一 · 知识问答系统（示例）}{主导后端服务设计，参与 AI 问答集成}{Golang · PostgreSQL · Redis · Docker}{2025/02 — 至今}
+
+\noindent\textbf{项目背景}：多来源内容需要统一管理并提供 AI 问答能力，构建知识库系统，实现文档索引、语义检索与上下文问答（示例）
+
+\begin{itemize}
+  \item \textbf{写法指引}： 项目简介一句话讲清"解决什么问题、面向谁"，两行以内；亮点条目全部按 STAR 展开
+  \item \textbf{[S] 背景}：多来源资料（Markdown / PDF / 网页）分散各处，检索困难、知识难以沉淀
+  \item \textbf{[T] 职责}：主导后端服务设计与 RAG 问答链路，负责部署与测试
+  \item \textbf{[A] 行动}：Go 编写后端，PostgreSQL + Redis 实现索引与缓存；集成向量检索、重排与上下文注入
+  \item \textbf{[R] 结果}：问答准确率提升 30\%+，支持异步导入与增量更新，一键部署
+  \item \textbf{补充}： 开源项目 / 课程大作业同样算项目素材，重点写个人贡献与可量化结果
+  \item \textbf{补充}： 可附线上 demo 链接或截图，比纯文字更有说服力
+\end{itemize}
+\repo{github.com/yourname/project-one}{https://github.com/yourname/project-one}
+
+\entry{示例项目二 · 任务协作平台（示例）}{核心开发 · 服务拆分与性能优化}{Go · Gin · gRPC · MySQL · Redis}{2025/02 — 至今}
+
+\begin{itemize}
+  \item \textbf{写法指引}： 课程项目 / 开源贡献同样适用 STAR：背景不用大，重点是"我的动作 + 可量化结果"
+  \item \textbf{[S] 背景}：团队协作工具割裂，任务流转依赖口头沟通，进度不可见
+  \item \textbf{[T] 职责}：核心开发，负责服务拆分与权限模型，参与整体架构设计
+  \item \textbf{[A] 行动}：Gin + gRPC 拆分服务，事件驱动降低耦合；MySQL 索引优化与分页策略
+  \item \textbf{[R] 结果}：核心列表查询稳定控制在 100ms 内，权限模型覆盖三类角色
+  \item \textbf{补充}： 突出"我做的"（主导 / 独立实现 / 优化），避免写团队整体成果
+\end{itemize}
+\repo{github.com/yourname/project-two}{https://github.com/yourname/project-two}
+
+\section{专业技能}
+
+\noindent\textbf{主线技术栈}：Golang · 服务端开发 · 数据库 · 分布式系统（示例）
+
+\vspace{3pt}
+
+\begin{itemize}
+  \item \textbf{写法指引}： 编程语言写熟悉程度（熟悉 / 掌握 / 了解），只写实际用过的，不罗列语法
+  \item 计算机基础：对标岗位 JD 写——数据结构与算法、计算机网络、操作系统、数据库原理
+  \item 后端开发：按项目实际使用写（Gin / gRPC / MySQL / Redis / Kafka），能举例说明更好
+  \item 工程能力：有实践才写——Docker、GitHub Actions、Linux、Prometheus，可带一句 CI/CD 实践
+  \item AI 应用开发（可选）：RAG、向量检索、Agent 等写做过什么，而非名词堆砌
+  \item \textbf{写法指引}： 技能条数建议 5--8 条，按岗位 JD 排序，与岗位最相关的放最前
+  \item \textbf{补充}： 有开源项目、技术博客、分享链接时可放入头部 GitHub 行，或单独一行列出
+  \item \textbf{写法指引}： 慎用"精通"；用"熟悉 / 掌握 / 了解"的阶梯表达更可信
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,165 @@
+\documentclass[10pt,a4paper]{ctexart}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\usepackage[a4paper,left=1.0cm,right=1.0cm,top=1.15cm,bottom=0.75cm,nohead]{geometry}
+\linespread{1}
+
+\usepackage{xcolor}
+\definecolor{themecolor}{HTML}{0849A3}
+\definecolor{textmain}{HTML}{111111}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{newunicodechar}
+\newunicodechar{→}{$\rightarrow$}
+\CJKsetecglue{}
+\setmainfont[
+  Path = Font/,
+  Extension = .otf,
+  BoldFont = HelveticaNeueLTPro-Md.otf
+]{HelveticaNeueLTPro-Roman.otf}
+\setCJKmainfont[
+  Path = Font/,
+  Extension = .otf,
+  BoldFont = ProGB18030 DemiBold.otf
+]{ProGB18030.otf}
+
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{fontawesome}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic}
+\usepackage{enumitem}
+
+\usepackage{enumitem}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=0.1em,itemsep=0.5pt,parsep=0pt,partopsep=0pt,leftmargin=1.2em}
+\setlist[enumerate]{topsep=0.1em,itemsep=0.6pt,parsep=0pt,partopsep=0pt,leftmargin=1.35em}
+
+\usepackage{titlesec}
+% ========== 核心修改：section标题字号由\large → \Large，调整上下间距 ==========
+\titleformat{\section}
+  {\Large\bfseries\raggedright\color{textmain}}
+  {}{0em}{}
+  [{\color{themecolor}\titlerule}]
+% \titlespacing*{命令}{左边距}{段前间距}{段后间距}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+
+\newcommand{\sect}[2]{%
+  \section{\texorpdfstring{\makebox[\widthof{\faGraduationCap}][c]{{\mdseries\color{themecolor}#1}}\ #2}{#2}}
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{\color{themecolor}\rule{\paperwidth}{1.0em}}%
+}
+\AddToShipoutPictureFG*{%
+  \AtPageLowerLeft{\raisebox{0.18em}[0pt][0pt]{\makebox[\paperwidth][c]{\color{white}\scriptsize\faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}}}}%
+}
+
+
+% \begin{tikzpicture}[remember picture,overlay]
+%   \node[anchor=north west] at ($(current page.north west)+(0.35cm,-0.35cm)$)
+%   {\includegraphics[height=1.45cm]{img/nchu.png}};
+% \end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north east] at ($(current page.north east)+(-0.7cm,-0.9cm)$)
+  {\includegraphics[height=2.3cm]{img/avatar.png}};
+\end{tikzpicture}
+
+\centerline{\LARGE\bfseries\color{textmain}王秋明}
+  \centerline{\small
+  \faPhone\ 17679390730\quad
+  \faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}
+  }
+  
+  \centerline{\small
+  \faCalendar\ 25岁\quad
+  \faMars\ 男\quad
+  \faGraduationCap\ 应届生\quad
+  \faBullseye\ 运维工程师\quad
+  \faFlag\ 中共党员
+  }
+\vspace{-2pt}
+
+\sect{\faGraduationCap}{教育背景}
+\noindent\textbf{江西师范大学 - 软件学院 \quad 软件工程 \quad 本科 \quad 成绩前10\%}
+\hfill 2020.09 -- 2024.06\\
+\qquad 主修课程：操作系统、计算机网络、计算机组成原理、数据库原理、Linux程序设计、信息安全等
+
+\vspace{3pt}
+\noindent\textbf{南昌航空大学 - 信息工程学院 \quad 计算机技术 \quad 硕士 \quad 成绩前10\%}
+\hfill 2024.09 -- 2027.06\\
+\qquad 主修课程：高级操作系统、计算机网络与安全、分布式系统、云计算与虚拟化、算法设计与分析、项目管理等
+
+
+\sect{\faTrophy}{获奖与证书}
+\begin{itemize}
+  \item 2021-2022 ACM/ICPC 江西省省赛 金牌
+  \item 第十一届、十二届蓝桥杯程序设计（C++组）全国三等奖
+  \item 2023中国高校计算机大赛-团体程序设计天梯赛全国二等奖
+  \item 获校综合素质一等奖学金，国家励志奖学金，校三好学生，文明大学生，优秀毕业生称号
+  \item 2021-2022、2022-2023年江西省程序设计大赛一等奖
+  \item CET6 、软件设计师
+\end{itemize}
+
+\sect{\faUniversity}{实习经历}
+\vspace{4pt}
+\noindent\textbf{宁德时代 · 21C创新实验室} \hfill IT支持  \hfill 2022.06 -- 2022.08\\
+\vspace{-7pt}
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 协助维护实验室办公终端、打印机及会议设备，处理系统异常、外设故障、账号权限和网络连接问题，整理设备台账与常见故障手册，降低重复咨询成本。
+  \item 参与企业级文档库平台上线推广，协助用户完成环境配置、权限开通和操作培训，收集使用反馈并跟进问题闭环，提升研发团队文档管理效率。
+  \item 参与平台前端模块开发和浏览器兼容性优化，配合后端联调接口；协助测试发布版本，保障功能稳定交付。
+\end{enumerate}
+\vspace{4pt}
+\noindent\textbf{华平股份信息技术有限公司} \hfill 系统维护 \hfill 2024.03 -- 2024.05\\
+\vspace{-7pt}
+\begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
+  \item 参与多监控平台日常巡检和版本更新，跟踪服务异常、页面访问失败、音视频卡顿等问题，协助定位服务器、网络和应用层原因，并输出故障处理记录。
+  \item 参与监控平台前端重构和老项目迁移，统一组件配置与部署流程；协助编写部署说明和回归测试清单，缩短新环境部署和问题排查时间。
+  \item 参与实时音视频会议系统测试与上线支持，关注多终端兼容、弱网体验和并发稳定性，协助现场用户解决设备接入、屏幕共享和会议异常等问题。
+\end{enumerate}
+
+\sect{\faFileText}{项目经历}
+% \textbf{智能面试平台部署与自动化运维实践}
+
+% Nginx + Docker Compose + Linux Shell + GitHub Actions \quad | \quad MySQL + PostgreSQL + Redis + Prometheus/Grafana
+% \begin{itemize}
+%   \item \textbf{项目简介：}基于个人开发的智能面试平台完成私有化部署和运行监控实验，覆盖应用发布、反向代理、数据备份、日志分析和资源监控等常见运维场景。
+% \end{itemize}
+% \begin{enumerate}
+%   \item 在Linux云服务器上使用Docker Compose编排Nginx、Spring Boot后端、PostgreSQL、Redis及AI推理服务，统一管理环境变量、端口映射、数据卷和容器重启策略。
+%   \item 配置Nginx反向代理、HTTPS证书、Gzip压缩、静态资源缓存和安全响应头；设置访问日志轮转与错误日志分析规则，便于追踪异常请求和服务状态。
+%   \item 编写Shell脚本完成代码拉取、镜像构建、配置检查、服务健康探测和失败回滚；结合GitHub Actions实现提交后自动测试、打包和手动审批发布。
+%   \item 部署Prometheus、Node Exporter和Grafana监控CPU、内存、磁盘、网络及关键接口状态，配置磁盘空间、服务不可用和高延迟告警，并整理巡检记录。
+%   \item 制定MySQL/PostgreSQL逻辑备份策略，验证备份恢复流程；排查数据库连接泄漏、Redis内存增长、接口超时等问题，优化慢SQL索引和容器资源限制。
+% \end{enumerate}
+
+\vspace{5pt}
+\noindent\textbf{校园实验室设备与网络维护项目}\hfill 2023.09 -- 2024.06\\
+Ubuntu/CentOS + 交换机/路由器 + 网线制作/弱电布线 + Windows部署 + 台账管理
+\begin{enumerate}
+  \item 协助维护实验室约80台PC、交换机、投影仪和打印设备，处理蓝屏、无法开机、IP冲突、共享打印、外设识别等故障，建立报修登记与处理台账。
+  \item 参与机房和工位环境整理，检查温湿度、供电、接地、线缆标识和设备散热情况；协助更换故障网口、跳线和硬盘，规范设备标签与资产信息。
+  \item 完成Windows/Ubuntu双系统安装、驱动配置、办公软件批量部署和基础安全设置；编写新生上机指南并协助开展设备使用培训。
+\end{enumerate}
+
+\sect{\faWrench}{技能特长}
+\begin{enumerate}
+  \item \textbf{IT设备与机房维护：}熟悉台式机、笔记本、打印机、会议设备的常见故障处理、系统安装、驱动配置和外设接入；了解机房供电、温湿度、线缆标识、资产台账和日常巡检要求。
+  \item \textbf{网络与安全：}掌握TCP/IP、DNS、DHCP、HTTP/HTTPS原理，能进行IP规划、连通性排查、路由追踪、端口检测和防火墙基础配置；了解交换机/VLAN、无线AP、VPN及常见安全加固方法。
+  \item \textbf{服务器与虚拟化：}熟悉Linux常用命令、用户权限、进程调度、systemd服务和日志分析；了解VMware/PVE/KVM虚拟化概念，能完成云主机初始化、远程登录、快照备份与基础性能排查。
+  \item \textbf{部署与监控：}熟悉Nginx反向代理、Docker/Docker Compose、Git/GitHub Actions；能编写Bash脚本进行巡检、备份、日志清理和服务发布，了解Prometheus/Grafana监控告警。
+  \item \textbf{办公与信息化支持：}熟练使用Windows Server基础功能、Office/WPS、远程桌面、共享打印和权限管理；具备用户培训、需求沟通、上线支持和问题闭环经验。
+  \item \textbf{综合素质：}计算机专业应届生，学习能力强，能耐心处理重复性事务；有团队协作和跨岗位沟通经验，适应值班、应急响应和多任务推进。
+\end{enumerate}
+
+\end{document}

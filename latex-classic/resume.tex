@@ -1,0 +1,177 @@
+% !TEX program = xelatex
+
+% ============================================================
+%  经典蓝 LaTeX 简历模版（写作指引示例内容）
+%
+%  版式来源：brucep3/myCV 改版（https://github.com/brucep3/myCV）
+%  章节顺序：教育经历 → 实习经历 → 项目经历 → 专业技能
+%  内容为 STAR 写作指引示例，请替换为自己的真实信息。
+%
+%  编译：xelatex resume.tex（需 Font/ 目录内字体，见 README）
+%
+%  字体版权提示：方正兰亭黑 / Helvetica Neue LT Pro 为商业字体，
+%  仅供本地个人使用，请勿随模版对外分发。
+% ============================================================
+
+\documentclass[10pt]{article}
+
+% disable indent globally
+\setlength{\parindent}{0pt}
+% use hyperlink for email and url
+\usepackage{hyperref}
+% 链接显示为 #00AEef
+\hypersetup{
+  hidelinks,
+  colorlinks=true,
+  urlcolor=LinkBlue,
+  linkcolor=LinkBlue
+}
+\usepackage{url}
+\urlstyle{tt}
+
+\usepackage{xcolor}
+% 主题色：RGB(0, 62, 116) = #003E74，
+% 用于 section 下划线和 fontawesome 图标
+\definecolor{CVBlue}{RGB}{0,62,116}
+% 链接色：#00AEef
+\definecolor{LinkBlue}{RGB}{0,174,239}
+
+%%% \widthof[]{} 用于特殊对齐
+\usepackage{calc}
+
+% loading fonts
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\CJKsetecglue{} %% 取消中文与数字之间间隙
+
+%%%%% 字体（商业字体，本地使用，不随仓库分发）
+% 中文：方正兰亭黑 Pro，西文：Helvetica Neue LT Pro
+\setmainfont[
+  Path = Font/,
+  Extension = .otf ,
+  BoldFont = HelveticaNeueLTPro-Md.otf ,
+]{HelveticaNeueLTPro-Roman.otf}
+
+\setCJKmainfont[
+  Path = Font/,
+  Extension = .otf ,
+  BoldFont = ProGB18030-DemiBold.otf ,
+]{ProGB18030.otf}
+
+% use fontawesome (FA4)
+% 注意：本目录的 fontawesome.sty 已改为从 Font/ 目录按文件路径加载图标字体
+\usepackage{fontawesome}
+
+\usepackage[
+  a4paper,
+  left=0.8cm,
+  right=0.8cm,
+  top=0.5cm,
+  bottom=0.8cm,
+  nohead
+]{geometry}
+
+\renewcommand{\baselinestretch}{1.2} % 行间距 1.2
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\setlist{noitemsep} % removes spacing from items but leaves space around the whole list
+\setlist[itemize]{topsep=0.25em, leftmargin=*}
+\setlist[enumerate]{topsep=0.25em, leftmargin=*}
+
+\titleformat{\section}
+  {\large\bfseries\raggedright}
+  {}{0em}{}
+  [{\color{CVBlue}\titlerule}]
+\titlespacing*{\section}{0cm}{*1.6}{*1.2}
+
+% 仓库链接行（用于项目经历）
+\newcommand{\repo}[2]{%
+  \par\vspace{2pt}\noindent{\small\faGithub\ 仓库：\href{#2}{#1}}\par
+}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+% ============ 姓名 / 联系方式 ============
+\centerline{\LARGE\bfseries{张三}}
+
+\centerline{\normalsize{\faPhone\ +86 138-0100-0000 \quad \faEnvelopeO\ \href{mailto:yourname@example.com}{yourname@example.com} \quad \faGithub\ \href{https://github.com/yourname}{github.com/yourname}}}
+
+% ============ 教育经历 ============
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育经历}
+
+\textbf{示例大学·本科} \hfill 2021.09 -- \makebox[\widthof{2021.09}][s]{至今}
+
+计算机科学与技术专业（示例），GPA 前30\%，CET-6
+\begin{itemize}
+  \item \textbf{写法指引}： 第一行写学校、专业、毕业年份；GPA、奖学金、英语等级等信息一并概括，一行写完
+  \item \textbf{加分项}： 第二行写在校研究方向、高绩点课程或求职意向，一句话即可，不必展开
+  \item \textbf{补充}： 应届生可标注求职方向（如后端开发 / AI 应用开发），与岗位 JD 对齐
+\end{itemize}
+
+% ============ 开源经历 ============
+\section{\makebox[\widthof{\faGithub}][c]{\color{CVBlue}\faGithub}\ 开源经历}
+
+\begin{itemize}
+  \item \textbf{写法指引}： 开源贡献写"项目名 + 你的贡献 + 结果"：修复了什么问题、提交了什么 PR、维护了什么仓库
+  \item 示例：为知名开源项目修复并发 bug 并补充测试，PR 被合并，仓库获得 200+ star（示例）
+  \item 示例：维护自己的开源工具库（如 GitHub Actions 工作流、CLI 工具），累计下载量 5k+（示例）
+\end{itemize}
+
+% ============ 实习经历 ============
+\section{\makebox[\widthof{\faBriefcase}][c]{\color{CVBlue}\faBriefcase}\ 实习经历}
+
+\textbf{示例科技有限公司 · 后端开发实习生（示例）} \hfill 2025.07 -- 2025.12
+
+负责工作：参与消息平台后端研发，负责模板渲染与告警系统改造（示例）
+\begin{itemize}
+  \item \textbf{[S·情境] 先交代背景}：业务发展快，站内消息模板渲染链路响应慢（180ms+），高峰期告警多、人工排障成本高
+  \item \textbf{[T·任务] 再写职责}：独立负责模板渲染模块的重构、测试与上线，参与告警系统改造
+  \item \textbf{[A·行动] 写关键动作}：用 Go + MySQL + Redis 重写渲染链路，引入异步队列与幂等控制，补齐监控
+  \item \textbf{[R·结果] 最后量化}：接口平均响应时间从 180ms 降至 65ms，重复消费基本消除，排障时间减半
+  \item \textbf{写法指引}： 每条经历都是"背景 → 职责 → 行动 → 量化结果"四段式；没有实习经历时删掉本模块，项目多写两行
+\end{itemize}
+
+% ============ 项目经历 ============
+\section{\makebox[\widthof{\faWrench}][c]{\color{CVBlue}\faWrench}\ 项目经历}
+
+\textbf{示例项目一 · 核心开发 · 知识问答系统（示例）} \hfill 2025.02 -- \makebox[\widthof{2025.02}][s]{至今}
+
+\textbf{项目背景}：业务侧需要统一管理多来源内容并提供 AI 问答能力，因此构建统一的知识库系统，实现文档索引、语义检索与上下文问答
+
+\begin{itemize}
+  \item \textbf{写法指引}： 项目简介一句话讲清"解决什么问题、面向谁"，两行以内；亮点条目全部按 STAR 展开
+  \item \textbf{[S] 背景}：多来源资料（Markdown / PDF / 网页）分散各处，检索困难、知识难以沉淀
+  \item \textbf{[T] 职责}：主导后端服务设计与 RAG 问答链路，负责部署与测试
+  \item \textbf{[A] 行动}：Go 编写后端，PostgreSQL + Redis 实现索引与缓存；集成向量检索、重排与上下文注入
+  \item \textbf{[R] 结果}：问答准确率提升 30\%+，支持异步导入与增量更新，一键部署
+\end{itemize}
+\repo{github.com/yourname/project-one}{https://github.com/yourname/project-one}
+
+\textbf{示例项目二 · 运行时开发 · 任务协作平台（示例）} \hfill 2025.02 -- \makebox[\widthof{2025.02}][s]{至今}
+
+\begin{itemize}
+  \item \textbf{写法指引}： 课程项目 / 开源贡献同样适用 STAR：背景不用大，重点是"我的动作 + 可量化结果"
+  \item \textbf{[S] 背景}：团队协作工具割裂，任务流转依赖口头沟通，进度不可见
+  \item \textbf{[T] 职责}：核心开发，负责服务拆分与权限模型，参与整体架构设计
+  \item \textbf{[A] 行动}：Gin + gRPC 拆分服务，事件驱动降低耦合；MySQL 索引优化与分页策略
+  \item \textbf{[R] 结果}：核心列表查询稳定控制在 100ms 内，权限模型覆盖三类角色
+\end{itemize}
+\repo{github.com/yourname/project-two}{https://github.com/yourname/project-two}
+
+% ============ 专业技能 ============
+\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 专业技能}
+
+\noindent\textbf{主线技术栈}：Golang · 服务端开发 · 数据库 · AI 应用开发 · RAG（示例）
+
+\begin{itemize}
+  \item \textbf{写法指引}： 编程语言写熟悉程度（熟悉 / 掌握 / 了解），只写实际用过的，不罗列语法
+  \item 计算机基础：对标岗位 JD 写——数据结构与算法、计算机网络、操作系统、数据库原理
+  \item 后端开发：按项目实际使用写（Gin / gRPC / MySQL / Redis / Kafka），能举例说明更好
+  \item 工程能力：有实践才写——Docker、GitHub Actions、Linux、Prometheus，可带一句 CI/CD 实践
+  \item AI 应用开发（可选）：RAG、向量检索、Agent 等写做过什么，而非名词堆砌
+  \item \textbf{写法指引}： 技能条数建议 5--8 条，按岗位 JD 排序，与岗位最相关的放最前
+\end{itemize}
+
+\end{document}
