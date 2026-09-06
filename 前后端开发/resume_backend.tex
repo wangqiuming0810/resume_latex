@@ -2,11 +2,11 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-\usepackage[a4paper,left=1.0cm,right=1.0cm,top=1.15cm,bottom=0.75cm,nohead]{geometry}
-\linespread{0.98}
+\usepackage[a4paper,left=1.0cm,right=1.0cm,top=0.75cm,bottom=0.75cm,nohead]{geometry}
+\linespread{1.02}
 
 \usepackage{xcolor}
-\definecolor{themecolor}{HTML}{0849A3}
+\definecolor{themecolor}{HTML}{2563eb}
 \definecolor{textmain}{HTML}{111111}
 
 \usepackage{fontspec}
@@ -43,7 +43,7 @@
 
 \usepackage{titlesec}
 \titleformat{\section}
-  {\Large\bfseries\raggedright\color{textmain}}
+  {\large\bfseries\raggedright\color{textmain}}
   {}{0em}{}
   [{\color{themecolor}\titlerule}]
 \titlespacing*{\section}{0pt}{8pt}{3pt}
@@ -55,15 +55,14 @@
 \begin{document}
 \pagestyle{empty}
 
-\AddToShipoutPictureBG*{%
-  \AtPageLowerLeft{\color{themecolor}\rule{\paperwidth}{1.0em}}%
-}
-\AddToShipoutPictureFG*{%
-  \AtPageLowerLeft{\raisebox{0.18em}[0pt][0pt]{\makebox[\paperwidth][c]{\color{white}\scriptsize\faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}}}}%
-}
-
+% \AddToShipoutPictureBG*{%
+%   \AtPageLowerLeft{\color{themecolor}\rule{\paperwidth}{1.0em}}%
+% }
+% \AddToShipoutPictureFG*{%
+%   \AtPageLowerLeft{\raisebox{0.18em}[0pt][0pt]{\makebox[\paperwidth][c]{\color{white}\scriptsize\faEnvelopeO\ \href{mailto:wangqiuming0810@foxmail.com}{wangqiuming0810@foxmail.com}}}}%
+% }
 \begin{tikzpicture}[remember picture,overlay]
-  \node[anchor=north east] at ($(current page.north east)+(-0.7cm,-0.9cm)$)
+  \node[anchor=north east] at ($(current page.north east)+(-0.9cm,-0.8cm)$)
   {\includegraphics[height=2.3cm]{img/avatar.png}};
 \end{tikzpicture}
 
@@ -83,68 +82,71 @@
 \vspace{-2pt}
 
 \sect{\faGraduationCap}{教育背景}
-\noindent\textbf{江西师范大学 - 软件学院 \quad 软件工程 \quad 本科 \quad 成绩前10\%}
+\noindent\textbf{江西师范大学 - 软件学院 \quad 软件工程 \quad 本科 \quad GPA：4.25/5 \quad 排名前10\%}
 \hfill 2020.09 -- 2024.06\\
 \qquad 主修课程：数据结构、操作系统、计算机网络、Java、Web开发，软件测试，项目管理等
 
 \vspace{3pt}
-\noindent\textbf{南昌航空大学 - 信息工程学院 \quad 计算机技术 \quad 硕士 \quad 成绩前10\%}
+\noindent\textbf{南昌航空大学 - 信息工程学院 \quad 计算机技术 \quad 硕士 \quad GPA：4.55/5 \quad 排名前10\%}
 \hfill 2024.09 -- 2027.06\\
 \qquad 主修课程：机器学习、深度学习、算法设计、复杂网络、数值分析、随机过程等
 
 
-\sect{\faTrophy}{获奖与证书}
-\begin{itemize}
-  \item 2021-2022 ACM/ICPC 江西省省赛 金牌
-  \item 第十一届、十二届蓝桥杯程序设计（C++组）全国三等奖
-  \item 2023中国高校计算机大赛-团体程序设计天梯赛全国二等奖
-  \item 获校综合素质一等奖学金，国家励志奖学金，校三好学生，文明大学生，优秀毕业生称号
-  \item 2021-2022、2022-2023年江西省程序设计大赛一等奖
-  \item CET6 、软件设计师
-\end{itemize}
+\vspace{3pt}
+{
+% 本组内，\baselineskip 控制行高，\\[Xpt]控制两行之间额外间距
+\noindent\textbf{大赛奖项：} ACM/ICPC 江西省省赛\textcolor{themecolor}{金牌}、第十一届、十二届蓝桥杯程序设计（C++组）\textcolor{themecolor}{全国三等奖}、中国高校计算机大赛-团体程序设计天梯赛\textcolor{themecolor}{全国二等奖}、江西省程序设计大赛\textcolor{themecolor}{一等奖}、江西省数学建模大赛\textcolor{themecolor}{二等奖}。\\[2pt]
+\noindent\textbf{个人荣誉：} 江西师范大学校一等奖学金、国家励志奖学金、\textcolor{themecolor}{优秀毕业生}、校三好学生、文明大学生；研究生入学二等奖学金、研究生一等奖学金。\\[2pt]
+\noindent\textbf{科研成果：} 发表\textcolor{themecolor}{SCI二区论文一作一篇}、非一作两篇；参与基金项目两项。\\[2pt]
+\noindent\textbf{证书：} \textcolor{themecolor}{CET-6、软件设计师(软考中级)}。
+}
+
 
 \sect{\faUniversity}{实习经历}
 \vspace{4pt}
-\noindent\textbf{宁德时代 · 21C创新实验室} \hfill 软件工程师 \hfill 2022.06 -- 2022.08
-
+\noindent\textbf{宁德时代 · 21C创新实验室} \hfill 软件工程师 \hfill 2023.06 -- 2023.08
 \begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
-  \item 参与企业级文档库平台前端架构设计，基于 React Hooks + Hoc框架搭建模块化前端工程体系，实现组件、路由、状态管理等核心功能，遵守团队开发流程。
-  \item 负责平台核心业务模块开发，实现用户授权、文件管理、文档在线编辑 / 预览 / 检索、团队协作等功能，支撑研发团队文档资产规范化管理。
-  \item 负责部门首页开发，基于Three.js实现 3D 动态特效，完成响应式布局与跨浏览器兼容适配；完成代码重构与性能优化，提升系统运行效率与用户体验。
+  \item 基于React Hooks + H0框架参与企业级文档库平台前端架构设计，搭建组件、路由与状态管理体系，输出\textcolor{themecolor}{多个通用业务组件}，平台支撑内部\textcolor{themecolor}{200+研发人员}日常使用，严格遵循团队Git与代码评审流程。
+  \item 开发用户授权、文件管理、文档在线编辑/预览/检索、团队协作等核心业务模块，完成文档全业务链路开发，文档检索响应速度提升，支撑研发文档资产规范化协同管理。
+  \item 使用Three.js实现部门首页3D动态特效，完成响应式布局与跨浏览器兼容；开展代码重构与性能调优，页面首屏加载耗时\textcolor{themecolor}{降低50\%}，改善系统交互体验。
 \end{enumerate}
-
 \vspace{4pt}
-\noindent\textbf{华平股份信息技术有限公司} \hfill 前端开发工程师 \hfill 2024.03 -- 2024.05
 
+\noindent\textbf{华平股份信息技术有限公司} \hfill 前端开发工程师 \hfill 2025.03 -- 2025.05
 \begin{enumerate}[topsep=0pt, partopsep=1pt, itemsep=2pt, parsep=0pt]
-  \item 负责多监控平台前端架构重构，完成jQuery老项目向Vue技术栈的全量迁移，拆分耦合业务模块，封装通用业务组件，搭建标准化工程化项目架构，优化后提升了项目构建速度以及代码复用率。
-  \item 负责Web端实时音视频会议系统前端开发，完成全流程核心页面与功能模块的搭建，基于WebRTC实现音视频实时交互、屏幕共享等核心能力，针对多人会议场景做性能与兼容性优化，支持多人同时稳定参会，保障线上系统高可用运行。
-  \item 主导前端组件库与代码规范建设，解决多浏览器兼容、大数据渲染、弱网体验优化等技术难题，配合团队完成需求评审、联调测试与上线全流程工作。
+  \item 主导监控平台前端架构重构，完成jQuery老项目向Vue技术栈全量迁移，拆解耦合业务并封装通用组件，搭建标准化工程架构；项目构建速度\textcolor{themecolor}{提升50\%}，提升组件复用率，减少重复业务编码。
+  \item 基于WebRTC开发Web端实时音视频会议系统，实现音视频交互、屏幕共享功能，针对多人场景做弱网与兼容性优化；系统支持最高\textcolor{themecolor}{60人同时在线参会}，线上卡顿率\textcolor{themecolor}{下降35\%}，保障业务稳定运行。
+  \item 建设前端公共组件库与编码规范，解决大数据渲染、多浏览器兼容等问题，完整参与需求评审、前后端联调、测试上线全流程，降低团队迭代维护成本。
 \end{enumerate}
+
+
 
 \sect{\faFileText}{项目经历}
 \textbf{AI 智能面试平台 + RAG 知识库}
 
-React 18 + Vite + Tailwind CSS \quad | \quad Spring Boot + Spring AI 2.0 + PostgreSQL + Redis
+React 18 + TypeScript + Vite + Tailwind CSS \quad | \quad Spring Boot 4.0 + Spring AI 2.0 + PostgreSQL + Redis + pgvector
 \begin{itemize}
-  \item \textbf{项目简介：}一个基于大语言模型的智能面试辅助平台，旨在帮助求职者提升面试能力。主要包括智能简历分析、模拟面试系统、RAG 知识库问答三大核心功能。
+  \item \textbf{项目简介：}基于大模型的智能面试辅助平台，具备简历分析、模拟面试、RAG知识库问答三大核心能力，帮助求职者提升面试水平。
 \end{itemize}
-
 \begin{enumerate}
-  \item 基于React 18+TypeScript构建SPA前端，Spring Boot 4.0+Spring AI提供RESTful API，实现简历分析、模拟面试、知识库RAG问答的完整功能。
-  \item 基于Apache Tika实现PDF/DOCX/TXT多格式简历解析与S3存储，通过SHA-256哈希拦截重复上传；设计Skill驱动的智能出题体系，支持10+面试方向三阶段动态分配，新增方向零代码配置。
-  \item 打通AI流式交互全链路，前端实现SSE消息处理与虚拟列表渲染，后端对接大模型Streaming API；构建Redis Stream异步任务体系解耦AI推理，提升核心接口响应时间。
-  \item 实现基于pgvector的知识库RAG系统，支持多文档上传与语义检索；设计正则净化、安全边界指令、输出护栏三层纵深防御，解决LLM提示词注入风险。
-  \item 搭建实时语音面试链路，前端基于Web Audio API+WebSocket实现录音与实时通信，后端串联ASR→LLM→TTS服务，支持实时字幕及暂停/恢复功能。
+  \item 独立完成平台全栈开发，前端基于React18+TypeScript构建SPA，后端使用Spring Boot4.0+Spring AI提供RESTful API，实现简历分析、模拟面试、RAG知识库问答三大核心功能。
+  \item 对接大模型Streaming API打通AI对话链路，前端实现SSE流式消息处理与虚拟列表渲染，完成AI逐字流式回复展示。
+  \item 针对简历AI分析耗时场景，搭建Redis Stream生产者-消费者异步任务体系，前端轮询状态搭配骨架屏，核心接口响应时间\textcolor{themecolor}{从15s降至200ms}。
+  \item 实现知识库语义检索，前端支持多文档上传与会话管理；后端基于pgvector完成文档分块、向量化、相似度检索整套RAG链路。针对LLM提示词注入风险设计三层纵深防御（正则净化→安全边界指令→输出护栏），前端通过Axios拦截器统一处理安全错误码。
+  \item 实现语音面试实时链路，前端采用Web Audio API录音+WebSocket通信，后端串联ASR→LLM→TTS，支持实时字幕、暂停与恢复。
+  \item 前端简历上传并做格式校验；后端借助Apache Tika解析PDF/DOCX/TXT文档存入S3，通过SHA-256哈希拦截重复上传。
+  \item 实现Skill驱动出题体系，前端提供Skill选择器，后端内置10+面试方向与三阶段分配算法，新增方向仅修改配置文件，无需业务代码改动。
 \end{enumerate}
+
+
 
 \sect{\faWrench}{技能特长}
 \begin{enumerate}
   \item \textbf{计算机基础扎实}，熟练掌握数据结构与算法、操作系统、计算机网络、计算机组成原理等核心知识，具备良好的编程素养与逻辑思维能力。
   \item \textbf{全栈开发能力}，熟悉HTML5/CSS3/JavaScript，可基于Vue、React、uni-app完成Web/移动端开发；熟练使用SpringBoot、SpringCloud Alibaba微服务栈，能独立开发RESTful接口并完成前后端联调。
   \item \textbf{数据存储与中间件}，熟悉MySQL表结构设计、索引优化与SQL调优，了解使用Redis、RocketMQ/Kafka消息队列等中间件，了解MongoDB、Elasticsearch及Sharding-JDBC分库分表方案。
-  \item \textbf{AI应用}，熟悉 RAG、Function Calling、MCP 协议，了解 Prompt Engineering、Skill。
-  \item \textbf{工具使用}，熟练使用Git、Docker、Maven等工具，了解Git Flow协作规范、Linux常用命令与Nginx配置。熟练运用 Claude、GitHub Copilot、Codex等 AI 工具，能够提升开发效率。
+  \item \textbf{AI应用}，熟悉 RAG、Function Calling、MCP 协议，了解 Prompt Engineering、Skill；熟悉LangChain4j框架、工具调用编排、上下文管理、Agent多阶段任务执行等。
+  \item \textbf{工具使用}，熟练使用Git、Docker、Maven等工具，了解Linux常用命令与Nginx配置；熟练使用AI工具辅助编码。
 \end{enumerate}
 
 \end{document}
